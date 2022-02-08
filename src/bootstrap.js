@@ -3,11 +3,12 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import { BrowserRouter,  Switch, Route} from "react-router-dom";
+import thunk from 'redux-thunk';
 import reducers from "./reducers";
 import home from './components/home';
 import results from './components/results'
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 
 import "./style/main.scss";
 
